@@ -1,0 +1,8 @@
+.slide{
+    display:'flex';
+    justify-content: 'center';
+    background-color: aqua;
+    align-items: center;
+    margin-left: auto;
+ 
+}
