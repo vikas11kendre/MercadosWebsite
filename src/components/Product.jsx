@@ -1,7 +1,6 @@
 import { Button, Grid ,Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
-
 import { images } from './images'
 
 const Product = () => {
@@ -33,9 +32,10 @@ const Product = () => {
                         </Box>
 
                     </Grid>
-                )
+               )
             )}
         </Grid>
+                 
     </Box>
 
   )

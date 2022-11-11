@@ -1,56 +1,38 @@
+import { Container, Grid } from '@mui/material';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage.js'
 
-import { Container } from "@mui/system";
-
-import Home from "./Home";
-import Navbar from "./Navbar";
-import Feed from "./Feed";
-import MachineView from "./MachineView";
-import { Grid } from "@mui/material";
-import DispenseProcess from "./DispenseProcess";
-import Product from "./Product";
-import Features from "./Features";
-import FeedBack from "./FeedBack";
-import Footer from "./Footer";
-
+import FeaturesPage from './pages/FeaturesPage';
+import Footer from './components/Footer';
+import FeedBack from './components/FeedBack';
 
 
 function App() {
   return ( 
+    <BrowserRouter>
     <Container sx={{p:'0'}} >
     <Grid container >
       <Grid sx={{p:"12px"}} item xs={12}>
         <Navbar/>
       </Grid>
-      <Grid id='Home' sx={{p:"12px"}} item xs={12}>
-        <Home />
-      </Grid>
-      <Grid  sx={{p:"12px" ,backgroundColor:'#CD0000'}} item xs={12}>
-        <Feed />
-      </Grid>
-      <Grid sx={{p:"12px"}} item xs={12} >
-        <MachineView/>
-      </Grid>
-      <Grid sx={{p:"12px"}} item xs={12} >
-        <DispenseProcess/>
-      </Grid>
-      <Grid id="Products" sx={{p:"12px"}} item xs={12} >
-        <Product />
-      </Grid>
-      <Grid id="Features" sx={{p:"12px"}} item xs={12} >
-        <Features />
-      </Grid>
-      <Grid id="Contact Us" sx={{p:"12px"}} item xs={12} >
+    <Routes>
+      <Route path='/' element={<HomePage/>} />
+      
+      <Route path='/Features' element={<FeaturesPage/>}/>
+    </Routes>
+    <Grid id="Contact Us" sx={{p:"12px",mb:"40px"}} item xs={12} >
         <FeedBack />
       </Grid>
-      <Grid  item xs={12} >
+    <Grid  item xs={12} >
         <Footer/>
       </Grid>
     </Grid>
-    
-      
-      
-      
     </Container>
+    
+     
+  
+</BrowserRouter>
     
   );
 }
